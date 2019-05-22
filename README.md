@@ -23,7 +23,7 @@ It contains methods that correspond with the BOB commands, e.g. the `inhost("loc
 
 Below is an example of how to open a single tunnel.
 
-```
+```cpp
 #include <bobcpp/bobcpp.h>
 int main(int argc, char *argv[]) {
     try {
