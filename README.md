@@ -57,7 +57,6 @@ This project uses CMake to help build the project.
 
 * CMake >= v3.1.0
 * Qt5 Core, Network (currently the only available implementation)
-*
 
 **Build Instructions (Unix)**
 
