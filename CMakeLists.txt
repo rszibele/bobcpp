@@ -19,3 +19,6 @@ add_library(bobcpp SHARED
     src/Exception.cpp
     src/QtClient.cpp
 )
+
+install(TARGETS bobcpp
+        LIBRARY DESTINATION /usr/lib)
