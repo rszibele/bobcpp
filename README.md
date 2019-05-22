@@ -19,7 +19,7 @@ If you need to open/close tunnels without blocking then you can achieve this by 
 # Quickstart Guide
 
 The AbstractClient class provides the interface for the client.
-It contains methods that correspond with the BOB commands, e.g. the `inhost("localhost")` corresponds to the BOB command "inhost localhost".
+It contains methods that correspond with the BOB commands, e.g. the method `client->inhost("localhost")` corresponds to the BOB command `inhost localhost`.
 
 Below is an example of how to open a single tunnel.
 
@@ -49,7 +49,27 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+# Building
+
+This project uses CMake to help build the project.
+
+**Dependencies**
+
+* CMake >= v3.1.0
+* Qt5 Core, Network (currently the only available implementation)
+*
+
+**Build Instructions (Unix)**
+
+```bash
+git clone https://gitlab.com/rszibele/bobcpp.git
+mkdir bobcpp-build
+cd bobcpp-build
+cmake ../bobcpp/
+make
+make install
+```
 
 # License
 
-?
+This project is licensed under the BSD 3-clause license, which can be found in the file LICENSE in the root of the project source code.
