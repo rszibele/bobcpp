@@ -20,5 +20,12 @@ add_library(bobcpp SHARED
     src/QtClient.cpp
 )
 
+set(HEADER_FILES ${PROJECT_SOURCE_DIR}/include/bobcpp/bobcpp.h
+                 ${PROJECT_SOURCE_DIR}/include/bobcpp/AbstractClient.h
+                 ${PROJECT_SOURCE_DIR}/include/bobcpp/Data.h
+                 ${PROJECT_SOURCE_DIR}/include/bobcpp/Exception.h
+                 ${PROJECT_SOURCE_DIR}/include/bobcpp/QtClient.h)
+
 install(TARGETS bobcpp
         LIBRARY DESTINATION /usr/lib)
+install(FILES ${HEADER_FILES} DESTINATION /usr/include/bobcpp/)
