@@ -3,9 +3,6 @@
 
 #include <bobcpp/AbstractClient.h>
 
-// TODO: FIXME
-#define BOBCPP_QT 1
-
 // implementation specific includes
 #ifdef BOBCPP_QT
     #include <QSharedPointer>
