@@ -18,6 +18,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include/)
 add_library(bobcpp SHARED
     src/Exception.cpp
     src/QtClient.cpp
+    src/bobcpp.cpp
 )
 
 set(HEADER_FILES ${PROJECT_SOURCE_DIR}/include/bobcpp/bobcpp.h

@@ -16,26 +16,18 @@
 namespace I2P {
 namespace BOB {
 
-// Qt implementation
+// Qt
 #ifdef BOBCPP_QT
-using BobClient = AbstractClient<quint16, QString, QList<Data::Status>>;
-QSharedPointer<BobClient> CreateClient() {
-    return QSharedPointer<QtClient>(new QtClient());
-}
+    using BobClient = AbstractClient<quint16, QString, QList<Data::Status>>;
 #endif
-// Boost asio implementation
+// Boost asio
 #ifdef BOBCPP_BOOST
-//using BobClient =;
-shared_ptr<BobClient> CreateClient() {
-    return shared_ptr<BoostClient>(new BoostClient());
-}
 #endif
-// BSD socket implementation
+// BSD socket
 #ifdef BOBCPP_BSD
-//using BobClient = ;
-shared_ptr<BobClient> CreateClient() {
-    return shared_ptr<BsdClient>(new BsdClient());
 #endif
+
+QSharedPointer<BobClient> CreateClient();
 
 }
 }
