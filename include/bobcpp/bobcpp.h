@@ -21,25 +21,22 @@ namespace BOB {
 
 // Qt implementation
 #ifdef BOBCPP_QT
-QSharedPointer<AbstractClient<quint16,
-                               QString,
-                               QList<Data::Status>>> CreateClient() {
+using BobClient = AbstractClient<quint16, QString, QList<Data::Status>>;
+QSharedPointer<BobClient> CreateClient() {
     return QSharedPointer<QtClient>(new QtClient());
 }
 #endif
 // Boost asio implementation
 #ifdef BOBCPP_BOOST
-shared_ptr<AbstractClient<uint16_t,
-                          std::string,
-                          std::vector<Data::Status>>> CreateClient() {
+//using BobClient =;
+shared_ptr<BobClient> CreateClient() {
     return shared_ptr<BoostClient>(new BoostClient());
 }
 #endif
 // BSD socket implementation
 #ifdef BOBCPP_BSD
-shared_ptr<AbstractClient<uint16_t,
-                          std::string,
-                          std::vector<Data::Status>>> CreateClient() {
+//using BobClient = ;
+shared_ptr<BobClient> CreateClient() {
     return shared_ptr<BsdClient>(new BsdClient());
 #endif
 
