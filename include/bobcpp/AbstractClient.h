@@ -33,7 +33,7 @@ public:
     virtual void option(const TString &key, const TString &value) = 0;
     virtual void outhost(const TString &host) = 0;
     virtual void outport(const TString &port) = 0;
-    virtual void quiet() = 0;
+    virtual void quiet(const bool) = 0;
     virtual void quit() = 0;
     virtual TString setkeys(const TString &keys) = 0;
     virtual void setnick(const TString &nickname) = 0;

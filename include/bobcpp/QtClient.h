@@ -41,7 +41,7 @@ public:
     void option(const QString &key, const QString &value) override;
     void outhost(const QString &host) override;
     void outport(const QString &port) override;
-    void quiet() override;
+    void quiet(const bool) override;
     void quit() override;
     QString setkeys(const QString &keys) override;
     void setnick(const QString &nickname) override;

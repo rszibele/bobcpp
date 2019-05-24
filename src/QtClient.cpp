@@ -89,8 +89,8 @@ void QtClient::outhost(const QString &host) {
 void QtClient::outport(const QString &port) {
     exec("outport", port);
 }
-void QtClient::quiet() {
-    exec("quiet");
+void QtClient::quiet(const bool quiet) {
+    exec("quiet", quiet ? "True" : "False");
 }
 void QtClient::quit() {
     exec("quit");
