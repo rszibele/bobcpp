@@ -9,6 +9,7 @@ namespace I2P {
 namespace BOB {
 
 QtClient::QtClient() {
+    timeout = 1000 * 60 * 5; // 5 minutes
 }
 
 QtClient::~QtClient() {
@@ -17,9 +18,15 @@ QtClient::~QtClient() {
     }
 }
 
+int QtClient::getTimeout() {
+    return timeout;
+}
+void QtClient::setTimeout(const int timeout) {
+    this->timeout = timeout;
+}
+
 void QtClient::connect(const QString &host,
-                     const quint16 port,
-                     const int timeout) {
+                     const quint16 port) {
     socket.connectToHost(host, port);
     if(!socket.waitForConnected(timeout)) {
         throw Exception::ConnectionTimeout();
@@ -122,7 +129,7 @@ void QtClient::zap() {
 void QtClient::sendLine(const QString &line) {
     QByteArray ba = (line % "\n").toUtf8();
     qint64 r = socket.write(ba);
-    if(!socket.waitForBytesWritten()) {
+    if(!socket.waitForBytesWritten(timeout)) {
         throw Exception::SocketTimeout();
     }
     if(ba.length() != r) {
@@ -131,7 +138,7 @@ void QtClient::sendLine(const QString &line) {
 }
 QString QtClient::readLine() {
     while(!socket.canReadLine()) {
-        if(!socket.waitForReadyRead()
+        if(!socket.waitForReadyRead(timeout)
                 && socket.bytesAvailable() < 1) { // required for windows, as it may time out even when receiving
             throw Exception::SocketTimeout();
         }

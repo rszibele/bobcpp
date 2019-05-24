@@ -12,9 +12,11 @@ class AbstractClient
 public:
     virtual ~AbstractClient() {}
 
+    virtual int getTimeout() = 0;
+    virtual void setTimeout(const int timeout) = 0;
+    
     virtual void connect(const TString &host = "localhost",
-                         const TUInt16 port = 2827,
-                         const int timeout = 5 * 1000) = 0;
+                         const TUInt16 port = 2827) = 0;
     virtual void disconnect() = 0;
     virtual bool isConnected() = 0;
 

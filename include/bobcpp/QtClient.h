@@ -20,9 +20,11 @@ public:
     QtClient();
     ~QtClient() override;
 
+    int getTimeout() override;
+    void setTimeout(const int timeout) override;
+    
     void connect(const QString &host = "localhost",
-                 const uint16_t port = 2827,
-                 const int timeout = 5 * 1000) override;
+                 const uint16_t port = 2827) override;
     void disconnect() override;
     bool isConnected() override;
 
@@ -68,6 +70,7 @@ protected:
     QMap<QString, QString> parseKeyValues(const QString &line);
     bool parseStatus(const QString &line, Data::Status *status);
 
+    int timeout;
     QTcpSocket socket;
 };
 
