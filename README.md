@@ -32,16 +32,21 @@ int main(int argc, char *argv[]) {
 
         client->setnick("my-tunnel");
         auto pubkey = client->newkeys();
-        client->inhost("localhost");
+        client->inhost("127.0.0.1");
         client->inport("33555");
         client->start();
-        client->quit();
-
-        client->disconnect(); // close the socket
-
+        
         // Now you can connect your own TCP socket to localhost:33555
         // and send the destination on the first line (e.g. "zzz.i2p\n" without quotes)to connect to it.
         // After that you are directly communicating with the destination.
+        
+        // once finished, stop the tunnels, optionally clear them (remove from BOB) and then quit and disconnect.
+        client->stop();
+        client->clear(); // removes the tunnel
+        client->quit();
+        
+        // close the socket
+        client->disconnect();
     } catch(...) {
         // see bobcpp/Exception.h for the possible exceptions you can handle / possibly recover from
     }
