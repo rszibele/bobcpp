@@ -19,7 +19,7 @@ If you need to open/close tunnels without blocking then you can achieve this by 
 # Quickstart Guide
 
 The AbstractClient class provides the interface for the client.
-It contains methods that correspond with the BOB commands, e.g. the method `client->inhost("localhost")` corresponds to the BOB command `inhost localhost`.
+It contains methods that correspond with the BOB commands, e.g. the method `client->inhost("127.0.0.1")` corresponds to the BOB command `inhost 127.0.0.1`.
 
 Below is an example of how to open a single tunnel.
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
         
         // once finished, stop the tunnels, optionally clear them (remove from BOB) and then quit and disconnect.
         client->stop();
-        client->clear(); // removes the tunnel
+        client->clear(); // removes the stopped tunnels
         client->quit();
         
         // close the socket
