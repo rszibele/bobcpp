@@ -1,5 +1,5 @@
-#ifndef CLIENT_H
-#define CLIENT_H
+#ifndef BOBCPP_ABSTRACTCLIENT_H
+#define BOBCPP_ABSTRACTCLIENT_H
 
 #include <bobcpp/Data.h>
 

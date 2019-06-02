@@ -1,5 +1,5 @@
-#ifndef QTCLIENT_H
-#define QTCLIENT_H
+#ifndef BOBCPP_QTCLIENT_H
+#define BOBCPP_QTCLIENT_H
 
 #include <bobcpp/AbstractClient.h>
 #include <bobcpp/Data.h>

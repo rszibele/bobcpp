@@ -1,5 +1,5 @@
-#ifndef DATATYPES_H
-#define DATATYPES_H
+#ifndef BOBCPP_DATA_H
+#define BOBCPP_DATA_H
 
 #define BOBCPP_QT 1
 #ifdef BOBCPP_QT

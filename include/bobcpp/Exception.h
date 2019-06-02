@@ -1,5 +1,5 @@
-#ifndef EXCEPTIONS_H
-#define EXCEPTIONS_H
+#ifndef BOBCPP_EXCEPTION_H
+#define BOBCPP_EXCEPTION_H
 
 #include <exception>
 
