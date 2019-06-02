@@ -15,7 +15,7 @@ public:
     virtual int getTimeout() = 0;
     virtual void setTimeout(const int timeout) = 0;
     
-    virtual void connect(const TString &host = "localhost",
+    virtual void connect(const TString &host = "127.0.0.1",
                          const TUInt16 port = 2827) = 0;
     virtual void disconnect() = 0;
     virtual bool isConnected() = 0;
